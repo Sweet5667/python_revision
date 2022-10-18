@@ -1,0 +1,105 @@
+python revision day 3:
+
+
+\n use for next line
+
+example:
+s="chennai\nmadhurai"
+print(s)
+
+output:
+chennai
+madhuari
+
+how to get \n in output?
+just add r before the string value
+r stands for raw data
+
+basic string methods:
+
+name="tamilnadu"
+print(name.upper())
+
+output:
+TAMILNADU
+
+name="TAMILNADU"
+print(name.lower())
+output:
+tamilnadu
+
+news="today school holiday"
+print(name.title())
+output:
+Today School Holiday
+
+notes:title method change each word first letter into capital
+
+finiding first and last letter of a string :
+
+word="hello how are you"
+
+print(word[0])
+print(word[1])
+print(word[-1])
+print(word[len(word)-1])
+output:
+h
+e
+u
+u
+
+notes:
+len() function used for calculate a string length.
+string index start from 0 so we can find a last letter of a string by substract length of a string -1 and using string[-1].
+last letter of a string index is -1
+we can use a bool value in index,because true and false value is 1 and 0.
+
+slice operator:
+
+word="welcome"
+print(word[0:5])
+print(word[2:6])
+print(word[:6])
+print(word[2:])
+print(word[:])
+print(word[-1:])
+
+output:
+welco
+lcom
+welcome
+lcome
+welcome
+e
+
+notes:
+here 0 stands for starting index and 5 stands for index no 4 so the output is welco
+we not mention a value before the collan it's means starting index ,if we not mention a value after collan it's means last index of a string.if we mention only a collan it's gives the full string in output.
+we cannot use a reverse slicing.
+
+step operator:
+
+word="tamilnadu"
+print(word[::2])
+print(word[::3])
+
+output:
+tmlau
+tia
+notes:
+starts from begin index and step by 2.
+
+capitalize a particular string index using slice operator:
+
+word=tamilnadu
+print(word[2].upper())
+print(word[:2]+word[2].upper()+word[3:])
+output:
+M
+taMilnadu
+
+notes:
+in this program + act as concodenation operater.concodenation operator add a string valus.
+
+
