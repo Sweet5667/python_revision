@@ -1,0 +1,117 @@
+Python revision day 4
+
+len() function
+len function use for calculate length of a string.
+word="chennai"
+print(len(word))
+Output:
+7
+
+We cannot add string with any other data type.
+It's gives type error.
+but using of comma we can concodinate string and integer.
+In python.we can multiply a string.
+Example:
+Word="lub dub" *3
+Print(word)
+Output:
+lub dub lub dub lub dub
+
+finding a space in word using if condition:
+word="I am from chennai"
+if " " in word:
+    print("yes this word contain space")
+output:
+yes this word contain space
+
+type casting:
+whenever we need to change a data type into another type of data we use type casting.
+example:
+if we want to change float into integer
+mark=88.6
+print(int(mark))
+output:
+88
+
+integer to string:
+price=250
+print("your bill is"+str(price))
+output:
+your bill is 250
+str use for string
+
+string to integer
+amount="600"
+print (100+int(amount))
+output:
+700
+notes:int function use for change a data type  into integer
+
+type casting in Boolean
+a=1
+b=0
+c=12
+d=""
+e="abcd"
+f=0.1
+print(bool(a))
+print(bool(b))
+print(bool(c))
+print(bool(e))
+print(bool(f))
+output:
+true
+false
+true
+false
+true
+true
+
+notes:
+in Boolean all the numbers are true excluding 0.
+string values always true.empty string value is false.
+
+type casting in complex:
+value=5
+amount=4.3
+a="5"
+value=5j
+print(complex(value))
+print(complex(5,6))
+print(complex (amount,5)
+print(complex (a))
+print (complex (value))
+output:
+5+0j
+5+6j
+4.3+5j
+5+0j
+5j
+notes:
+We cannot change string into complex,but numbers in string can changed to complex.
+if we gives a single integer value to complex it's assumed as real part and imaginary part will be 0.
+We can convert float into complex.
+
+control flow statements:
+if the condition is true the codes will execute else doesn't execute.
+
+if condition example:
+
+mark=80
+if mark >90:
+    print("very good")
+elif mark >70:
+    print ("good")
+else:
+    print("average")
+
+output:
+good
+
+notes:
+if condition true if part execute otherwise else part execute.
+
+
+
+
+
