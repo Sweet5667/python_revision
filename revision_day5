@@ -1,0 +1,258 @@
+python revision day 5
+
+if statement should end with :
+if statement not need elif and else part all  the time
+
+interpreting time:
+.py programs change to byte codes
+
+running time or run time(execution time):
+byte code convert to binary code
+
+input()
+
+input function use for get inputs from user when the run time.
+we can give a string value in input function arguement.
+example:
+name=input("please enter your name")
+
+in runtime output;
+please enter your name
+notes:
+if user enter kumar,kumar stored in name variable
+in runtime user give any value, the value store as string data type.
+whenever programer need a integer value from user,programer use type casting.(ex)
+mark=int(input("please enter your mark"))
+----------------------------------------------------------------------------------------
+type()
+
+type()_function use for check the data type of a value.
+
+mark=80
+print(type(mark))
+
+output:
+class int
+-----------------------------------------------------------------------------------
+nested if statements:
+
+age=int(input("please enter your age")
+nationality=input("please enter your nationality")
+if age >5:
+	if nationality.lower()=="indian":
+		print("your eligible for aadhar")
+	else:
+		print("not for other nationalities')
+else:
+	print("age criteria not met")
+	
+-----------------------------------------------------------------------------------
+2 conditions in if statement:
+
+age=int(input("please enter your age"))	
+if age > 5:
+    nationality=input("enter your nationality")
+    if nationality=="indian" or nationality== "INDIAN":
+    	print("your eligible for aadhar")
+    else:
+        print("not for other nationalities")
+else:
+    print("age criteria not met")
+
+== ----> equals to
+!= ----> not equals to
+
+if not using in a program:
+
+if not and != are same
+
+
+age=int(input("please enter your age"))	
+if age > 5:
+    nationality=input("enter your nationality")
+    if not nationality.upper()=="INDIAN"
+    	print("not for other nationalities")
+    else:
+        print("you are eligible for aadhar")
+else:
+    print("age criteria not met")
+
+-----------------------------------------------------------------------
+sorted function:
+
+word=input("please enter any word")
+name=sorted(word)
+print(name)
+print(type(name))
+
+output:
+['a', 'a', 'j', 'n', 's', 'y']
+<class 'list'>
+
+word1=input("please enter any word")
+word2=input("please enter any word")
+if sorted(word1)==sorted(word2):
+	print("both are same")
+else:
+	print("not same")
+	
+notes:
+sorted function sort words in a letter and give list type output.
+--------------------------------------------------------------------------
+get 3 marks from user and check all marks are same:
+
+mark1=int(input("enter mark1"))
+mark2=int(input("enter mark2"))
+mark3=int(input("enter mark3"))
+
+if mark1==mark2==mark3:
+	print("all marks are same")
+else:
+	print("not same")
+------------------------------------------------------------------------------
+print 1 to 10 using while loop:
+
+number=1
+while number<=10:
+	print(number)
+	number=number+1
+
+output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+----------------------------------------------------------------
+printing input value to 1 using while loop:
+
+number=int(input("enter your value"))
+while number>=1:
+	print(number)
+	number=number-1
+----------------------------------------------------------------	
+guess a number by while loop:
+
+mind=5
+match_notfound=True
+while match_notfound==True:
+	guess=int(input("please enter your guess"))
+	if guess==mind:
+		print("congrats you guessed the number")
+		match_notfound=False
+	elif guess<mind:
+		print("your guess is too low")
+	else:
+		print("your guess is too high")
+-----------------------------------------------------------------
+finding multiples of 3 between 1 to 100 using while loop:
+
+start=1
+while start<=100:
+	if start%3==0:
+		print(start)
+	start=start+1
+----------------------------------------------------------------------------
+finding power of 3 between 1 to 100 using while loop:
+
+start=3
+while start<=100:
+	print(start)
+	start=start*3
+----------------------------------------------------------------------------
+finding multiples of 2 and 3 between 1 to 100 using while loop:
+
+start=1
+while start<=100:
+	if start%2==0 and start%3==0:
+		print(start)
+	start+=1
+------------------------------------------------------------------------------
+program for finding addition of n numbers:
+
+start=1
+total=0
+value=int(input("enter your range"))
+while start<=value:
+	total=total+start
+	start+=1
+print("your total is",total)
+-------------------------------------------------------------------------------
+break and continue in python:
+
+number=0
+while number<10:
+	number+=1
+	if number ==5:
+		break
+	print(number)
+
+output:
+1
+2
+3
+4
+
+number=0
+while number<10:
+	number+=1
+	if number==5:
+		continue
+	print(number)
+	
+output:
+1
+2
+3
+4
+6
+7
+8
+9
+
+notes:break use for stop a loop and continue use for skip a iteration.
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
