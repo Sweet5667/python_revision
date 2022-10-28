@@ -1,0 +1,117 @@
+Revision day 6
+
+printing a,e,i,o,u  letters in from user input:
+
+word=input("enter your word")
+no=0
+while no<len(word):
+	if word[no] in ["a","e","i","o","u"] or ["A","E","I","O","U"]:
+		print(word[no])
+	no+=1
+----------------------------------------------------------------------------------
+
+finding number of vowels presented in a word:
+
+word=input("enter your word")
+no=0
+count=0
+while no<len(word):
+	if word[no] in (["a","e","i","o","u"] or ["A","E","I","O","U"]):
+		print(word[no])
+		count+=1
+	no+=1
+print("no of vowels presented in word:",count)
+-------------------------------------------------------------------------------------
+in python we can use else condition for while loop:
+
+no=1
+while no<5:
+	print(no)
+	no=no+1
+else:
+	print('hi',no)
+
+output:
+1
+2
+3
+4
+hi 5
+--------------------------------------------------------------------------------------
+else part only work the loop is fully run.if we add  break in while loop and break will execute, else part 
+cannot run:
+
+no=1
+while no<5:
+	print(no)
+	no=no+1
+	break
+else:
+	print('hi',no)
+
+output:
+1
+--------------------------------------------------------------------------------
+
+asking a name from a user.allow only user enterd name is matched with computer mind name:
+
+mind="sanjay"
+while True:
+	word=input("enter your name please:")
+	if word==mind:
+		print("welcome",word)
+		break
+	else:
+		print("please re-enter your name:")
+		
+******************ANOTHER BETTER WAY************
+mind="sanjay"
+person=''
+while mind !=person:
+	person=input("enter your name")
+else:
+	print("welcome",person)
+---------------------------------------------------------
+using end=""
+
+name="sanjay"
+i=0
+while i<6:
+	print(name,end="-")
+	i+=1
+
+output:
+sanjay-sanjay-sanjay-sanjay-sanjay-sanjay
+
+another example for using end=  :
+
+name="sanjay"
+i=0
+while i<6:
+	print(name,end=" ")
+	i+=1
+	
+output:
+sanjay sanjay sanjay sanjay sanjay sanjay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
