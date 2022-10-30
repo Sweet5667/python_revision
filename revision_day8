@@ -1,0 +1,132 @@
+python revision day 8
+
+printing letters from a word using for loop:
+word="god is great"
+
+for i in word:
+	print(i,end="")
+--------------------------------------------------------
+printing vowels from a sentence using for loop:
+
+word="welcome chennai"
+vowels=0
+for i in word:
+	if i in ("a","e","i","o","u"):
+		print(i)
+		vowels+=1
+print(vowels,"vowels presented in the word")
+---------------------------------------------------------
+finding how many words presented in the sentence:
+
+sen=input("enter any word")
+word_count=1
+for i in sen:
+	if i==" ":
+		word_count+=1
+print(word_count,"words presented in the sentence")
+----------------------------------------------------------------
+finding how many alphabets,numbers and special characters presented in a sentence without using isalpha,isdigit:
+
+word=input("enter your word")
+specialCount=0
+numCount=0
+alphaCount=0
+for i in word:
+	if (i>="0" and i<="9"):
+		numCount+=1
+	elif ((i>="A" and i<="Z") or (i>="a" and i<="z")):
+		alphaCount+=1
+	else:
+		specialCount+=1
+print(alphaCount,"alphabets are found",numCount,"numbers are found",specialCount,"special characters are found")
+-----------------------------------------------------------------------------
+finding how many alphabets,numbers and special characters presented in a sentence using isalpha,isdigit:
+
+word=input("enter your word")
+specialCount=0
+numCount=0
+alphaCount=0
+for i in word:
+	if i.isdigit():
+		numCount+=1
+	elif i.isalpha():
+		alphaCount+=1
+	else:
+		specialCount+=1
+print(alphaCount,"alphabets found",numCount,"numbers found",specialCount,"special characters found")
+------------------------------------------------------------------------------------
+EXPECTED:
+sanjay
+sanja
+sanj
+san
+sa
+a
+
+PROGRAM:
+	
+word="sanjay"
+for row in range(len(word)):
+	for j in range(len(word)-row):
+		print(word[j],end="")
+	print()
+--------------------------------------------------------------------------
+EXPECTED:
+*****&
+****&&
+***&&&
+**&&&&
+*&&&&&
+
+PROGRAM:
+for row in range(5):
+	for col in range(5-row):
+		print("*",end="")
+	for andSymbol in range(row):
+		print("&",end="")
+	print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
