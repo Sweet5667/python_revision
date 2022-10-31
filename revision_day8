@@ -85,6 +85,168 @@ for row in range(5):
 	for andSymbol in range(row):
 		print("&",end="")
 	print()
+-------------------------------------------------------------------------------
+immutablitiy:
+whenever we change any value for a variable,the existing value present in a particular address will not get changed.insted,it will point out to new memory address.once we assinged a value to a particular variable and assinged a same value to another variable,the memory address of two variables is point a same memory address.
+
+example:
+
+house_no=5
+print(id(house_no))
+house_no=10
+print(id(house_no))
+print("same value in different variables")
+name="sanjay"
+name2="sanjay"
+print(id(name,name2))
+
+output:
+140213088862576
+140213088862736
+same value in different variables
+139780787643248
+139780787643248
+
+the existing house_no value 5 presented in a particular memory address and new house_no 10 presented in another memory address.so integer is  immutable.
+immutability use for efficient memory management and increase performance of program.
+
+immutablity in  string:
+	
+house_no="ten"
+print(id(house_no))
+house_no="five"
+print(id(house_no))
+
+output:
+139962622365104
+139962622321520
+-----------------------------------------------------------------------------------
+garbage collecter and multithreading:
+	
+whenever we create a variable and create another variable using name of existing variable,the existing varible memory consider as wastage.python clear the unused variables automaticaly use of garbage collecter method.whenever 2 or more programs run in same runtime called multithreading.
+-----------------------------------------------------------------------------------
+is keyword:
+
+city1="chennai"
+city2="chennai"
+print(city1 is city2)
+print(city1 == city2)
+
+output:
+True
+True
+
+is keyword use for compare memory address of two variables and == use for compare value of a variables.
+---------------------------------------------------------------------------------------
+string data does not support item assignment.beacuse string is immutabtliy.
+city1="chennai"
+city1[1]="o"
+print(city1)
+
+output:
+TypeError: 'str' object does not support item assignment.
+-------------------------------------------------------------------------------------
+compound data types in python:
+list,tuple,set,frozenset,dict,bytearray
+
+list:
+the list values separated by comma and list closed with square braket.
+list is mutable data type.
+we can craeate a empty list by using [].
+list accepts hetrogeneous values.
+
+names=["sanjay","vinoth","dhanush",123,5.6]
+print(id(names))
+name[0]="naveen"
+print(id(names))
+
+output:
+140676396654912
+140676396654912
+
+this programs gives the same memory address in output.beacuse list is mutable.
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
