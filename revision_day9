@@ -1,0 +1,326 @@
+concatenation operator in list:
+
+squares=[1,4,9,16]
+squares2=[25,36,49,64,81,100]
+print(squares+squares2)
+
+ouput:
+[1,4,9,16,25,36,49,64,81,100]
+-----------------------------------------------------------------------------
+append() :
+
+list is mutable so we can change or add a value in list.
+append function use for add a value  in list at last value.
+example:
+
+mark=[10,20,30,40,50]
+mark.append(60)
+print(mark)
+
+output:
+[10, 20, 30, 40, 50, 60]
+----------------------------------------------------------------------------
+changing a particular values in list using slicing method:
+
+name=["a","b","c","d","e","f"]
+name[2:5]=["C","D","E"]
+print(name)
+
+output:
+
+['a', 'b', 'C', 'D', 'E','f']
+
+remove unwanted values in a list using slicing method:
+
+name=["a","b","c","d","e","f"]
+name[2:5]=[]
+print(name)
+
+output:
+['a', 'b', 'f']
+
+remove all values in a list:
+
+name=["a","b","c","d","e","f"]
+name[:]=[]
+print(name)
+
+output:
+[]
+------------------------------------------------------------------------
+finding length of a list using len() function:
+
+name=["a","b","c","d","e","f"]
+print(len(name))
+
+output:
+6
+-----------------------------------------------------------------
+list in list:
+
+alpha=["a","b","c"]
+num=[1,2,3,4]
+both=[alpha,num]
+print(len(both))
+
+output:
+2
+-----------------------------------------------------------------------
+printing list values using for loop:
+
+mark=[10,20,30,40,50]
+for i in mark:
+	print(i,end=" ")
+
+output:
+10 20 30 40 50
+---------------------------------------------------------------------------
+finding vowels in a list using for loop:
+
+alpha=["a","b","c","d","e","f","g","h","i","j","k"]
+for letter in alpha:
+	if letter in ("a","e","i","o","u"):
+		print(letter)
+---------------------------------------------------------------------------
+printing inner list values using for loop:
+
+alpha=["a","b","c"]
+num=[1,2,3,4]
+both=[alpha,num]
+for outer in both:
+	for inner in outer:
+		print(inner,end=" ")
+
+output:
+a b c 1 2 3 4
+-------------------------------------------------------------------------------
+printing inner list values using whil loop:
+
+alpha=["a","b","c"]
+num=[1,2,3,4]
+both=[alpha,num]
+i=0
+while i <len(both):
+	j=0
+	while j<len(both[i]):
+		print(both[i][j],end=" ")
+		j+=1
+	i+=1
+---------------------------------------------------------------------------------
+print only alphabet from a list in list:
+
+alpha=["a","b","c",5,"e"]
+num=[1,2,3,4,"h",6]
+both=[alpha,num]
+i=0
+while i<len(both):
+	j=0
+	while j<len(both[i]):
+		if type(both[i][j])==str and both[i][j].isalpha():
+			print(both[i][j])
+		j+=1
+	i+=1
+
+output:
+a b c e h
+---------------------------------------------------------------------------------------
+finding who's name start with s in a list:
+
+hr=["naveen","sanjay","gopal","sunil","vinoth"]
+tester=["srikanth","lokesh","danial","dhanush"]
+developer=["santhosh","srimathi","vaishnavi","agilan"]
+admin=["rohini","vicky","vasanth","surendhar","chandru"]
+employee=[hr,tester,developer,admin]
+i=0
+while i<len(employee):
+	j=0
+	while j<len(employee[i]):
+		if employee[i][j][0]=="s":
+			print(employee[i][j],end=" ")
+		j+=1	
+	i+=1
+
+output:
+
+sanjay sunil srikanth santhosh srimathi surendhar
+----------------------------------------------------------------------------------
+remove() function :
+remove function use for remove a value in a list.once we use remove function we can give only one arguement.remove function remove only one value.
+example:
+hr=["naveen","sanjay","gopal","sunil","vinoth"]
+hr.remove("sanjay")
+print(hr)
+
+output:
+['naveen', 'gopal', 'sunil', 'vinoth']
+------------------------------------------------------------------------
+finding square for 1 to user given number:
+
+value=int(input("tell us the number"))
+squares=[]
+for i in range(1,value+1):
+	squares.append(i*i)
+print(squares)
+--------------------------------------------------------------------------
+collect a data from a class teacher,ask how many students in your class and collect name,age,percentage of each students then store all in separate list.and then add these 3 list into one list named student.from that list which students got more than or eqaul to 75%,print that student name,age,percentage.
+
+program:
+
+student_count=int(input("enter no of students in your class"))
+name=[]
+age=[]
+percentage=[]
+best=[]
+student_details=[name,age,percentage]
+
+for count in range(student_count):
+	name.append(input("enter name of student"))
+	age.append(input("enter age of student"))
+	percentage.append(float(input("enter percentage of student")))
+for i in range(len(student_details[2])): 
+	if student_details[2][i]>=75:
+		best.append(student_details[0][i])
+		best.append(student_details[1][i])
+		best.append(student_details[2][i])
+print(best)
+--------------------------------------------------------------------------------
+split() function:
+
+using of split function we can assume one string to multiple variables by separated by spaces.
+example:
+name,age,mark="sanjay 22 88 ".split()
+print(name)
+
+output:
+sanjay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
