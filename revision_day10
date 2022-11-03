@@ -1,0 +1,263 @@
+python revision day 10:
+
+count() function:
+count function use for find how many times a value presented in a list.
+example:
+list=["apple","banana","mango","apple","orange"]
+print(list.count("apple"))
+
+output:
+2
+----------------------------------------------------------------------------
+remove() funtion:
+remove function use for remove a value in a list.
+example:
+list=["apple","banana","mango","apple","orange"]
+print(list.remove("banana"))
+
+output:
+["apple", "mango", "apple", "orange"]
+--------------------------------------------------------------------------
+remove duplicate values from a list:
+
+list=["apple","banana","mango","apple","orange"]
+for i in list:
+	if list.count(i)>1:
+		list.remove(i)
+print(list)
+	
+output:
+['banana', 'mango', 'apple', 'orange']
+-------------------------------------------------------------------------
+index() function use for finding index of a value in list.
+
+example:
+
+list=["apple","banana","mango","apple","orange"]
+print(list.index("apple"))
+print(list.index("apple",1)
+
+output:
+0
+3
+notes( we can give 2 arguments in index function.first one is value and second argument represent starting index)
+-------------------------------------------------------------------------------------
+insert() function:
+insert function use for add a value in a list at specified index.insert function need 2 arguments first one is index and another one is value.insert function add a value in specific index but not remove existing value.the existing value move to next index.
+
+example:
+list=["apple","banana","mango","apple","orange"]
+list.insert(2,"papaya")
+print(list)
+
+output:
+['apple', 'banana', 'papaya', 'mango', 'apple', 'orange']
+--------------------------------------------------------------------------------
+tuple:
+tuple and list are almost same but tuple is immutable list is mutable data type.
+tuple syntex: t=() or t=5, or t=(10,20,30)
+we can create a empty tuple by using ().
+tuple doesnot support item assignment,because of immutable property.
+tuple perfome better than list.
+converting two tuples into one tuple:
+
+mark1=(10,20,30,40)
+mark2=(50,60,70,80)
+total=mark1,mark2
+print(total)
+
+output:
+((10, 20, 30, 40), (50, 60, 70, 80))
+---------------------------------------------------------------------------------------
+sequence unpacking:
+whenever we want to assign a tuple or list values to multiple variables, we just create a variable names separated by comma and then assign to tuple or list.
+example:
+
+t=10,20,30
+no1,no2,no3=t
+print(no2)
+
+output:
+20
+
+sequence data types:
+list,tuple and range are sequence data  types.
+-----------------------------------------------------------------------------------------
+set data type:
+set does not allow duplicate.
+set haven't index.
+whenever user print a set value, the output don't follow order.
+set is mutable data type.
+we can create a empty set by :   mark=set()
+adding a value in set:
+
+set={10,20,30,40}
+set.add(50)
+print(set)
+
+output:
+{40, 10, 50, 20, 30}
+
+remove a value from set:
+
+set={10,20,30,40,50}
+set.remove(20)
+print(set)
+
+output:
+{50, 40, 10, 30}
+
+set automatically removes duplicate values:
+
+set={10,20,30,40,10}
+print(set)
+
+output:
+{40, 10, 20, 30}
+--------------------------------------------------------------------------
+different between add() and append() function:
+add() belongs to python general function.append() belongs to list data type specified method.other data type cannot use append() expect list.
+--------------------------------------------------------------------------
+pop() function:
+pop() remove a random value in set.
+
+example:
+set={10,20,30,40}
+set.pop()
+print(set)
+
+output:
+{20, 10, 40}
+----------------------------------------------------------------------------
+printing one by one values from set:
+set={10,20,30,40}
+for i in set:
+	print(i,end=" ")
+
+output:
+40 10 20 30
+-------------------------------------------------------------------------------
+name1={"muthu","rama","lingam"}
+name2={"lingam","arul","amuthan"}
+print(name1 - name2) 
+print(name1 | name2)
+print(name1 & name2)
+print(name1 ^ name2)
+
+output:
+{'muthu', 'rama'} #only value presented in first set
+{'arul', 'amuthan', 'rama', 'lingam', 'muthu'} #value presented in two sets but duplicate removed.
+{'lingam'} #common value of two sets
+{'arul', 'rama', 'muthu', 'amuthan'} #value of two sets but common values not printed.
+------------------------------------------------------------------------------
+printing only integer values from a set:
+values={"nirai","madhi","arul",10,True,30,40}
+for i in values:
+	if isinstance(i,int):
+		print(i,end=" ")
+
+output:
+40 30 10
+
+notes(isinstance() function use for compare class of value with given data type.isinstance() need 2 arguments.first one is value and another one is data type.)
+------------------------------------------------------------------------------
+frozenset:
+frozenset is almost same to set.set is mutable but frozenset is immutable
+
+creating frozenset:
+s={10,20,30,40}
+f=frozenset(s)
+--------------------------------------------------------------
+dict:
+dict is pair of key and value.
+key must be immutable data type like integer,string,tuple.
+key value doesnot support duplicate.
+syntax of dict:
+results={"muthu":80,"kathir":97}
+print(type(results))
+
+output:
+<class'dict'>
+
+changing a existing value of a key:
+
+results={"muthu":80,"mani":78}
+results["muthu"]=98
+print(results)
+
+output:
+{'muthu': 98, 'mani': 78}
+
+adding new key value pair in dict:
+results={"muthu":80,"naveen":90}
+results["gopal"]=85
+print(results)
+
+output:
+{'muthu': 80, 'naveen': 90, 'gopal': 85}
+
+remove a particular key in dict:
+results={"mani":56,"gopal":76,"sanjay":90}
+del results["gopal"]
+print(results)
+
+output:
+{'mani': 56, 'sanjay': 90}
+
+typecasting dict from tuple,list,set:
+
+results={"mani":56,"gopal":76,"sanjay":90}
+a=list(results)
+print(a)
+print(type(a))
+
+output:
+['mani', 'gopal', 'sanjay']
+<class 'list'>
+-----------------------------------------------------
+printing only keys from a dict:
+
+results={"mani":56,"gopal":76,"sanjay":90}
+print(results.keys())
+
+output:
+dict_keys(['mani', 'gopal', 'sanjay'])
+
+printing only values from a dict:
+
+results={"mani":56,"gopal":76,"sanjay":90}
+print(results.values())
+
+output:
+dict_values([56, 76, 90])
+---------------------------------------------------------------
+results={"mani":56,"gopal":76,"sanjay":90}
+print([*results.values()])
+
+output:
+[56, 76, 90]
+
+notes:
+* operator remove the dict_values from the output.
+----------------------------------------------------------------
+get() function used for get a value for enterd key.
+example:
+results={"mani":56,"gopal":76,"sanjay":90}
+print(results.get("gopal"))
+print(results.get("sanjay"))
+
+output:
+76
+90
+--------------------------------------------------------------
+results={"mani":56,"sanjay":90,"gopal":76}
+details={"priya":90,"vaishnavi":88,"srimathi":99}
+print(results.popitem())
+print(details.popitem())
+
+output:
+('gopal', 76)
+('srimathi', 99)
+
+popitem() remove's last key value pair in a dict.
+---------------------------------------------------------------
