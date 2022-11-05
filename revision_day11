@@ -1,0 +1,125 @@
+python revision day11:
+
+pop() function:
+pop function use for remove a key value pair of given input.
+pop() function need one argument.
+example:
+
+mark={"sanjay":99,"naveen":89,"gopal":76,"vinoth":78}
+mark.pop("naveen")
+print(mark)
+
+output:
+{'sanjay': 99, 'gopal': 76, 'vinoth': 78}
+---------------------------------------------------------------------
+printing dict keys using for loop:
+
+mark={"sanjay":99,"naveen":89,"gopal":76,"vinoth":78}
+for key in mark:
+	print(key)
+
+output:
+sanjay
+naveen
+gopal
+vinoth
+
+printing dict keys with values using for loop:
+
+age={"dhanush":28,"gopal":29,"naveen":20,"sanjay":21}
+for i in age:
+	print(i,"---->",age[i])
+
+output:
+dhanush ----> 28
+gopal ----> 29
+naveen ----> 20
+sanjay ----> 21
+
+printing dict key value pair using items() function:
+
+age={"dhanush":28,"gopal":29,"naveen":20,"sanjay":21}
+for i in age.items():
+	print(i)
+
+output:
+('dhanush', 28)
+('gopal', 29)
+('naveen', 20)
+('sanjay', 21)
+
+notes:items() function return a tuple value.
+------------------------------------------------------------------
+printing key value from a dict using for loop:
+
+age={"dhanush":28,"gopal":29,"naveen":20,"sanjay":21}
+for key,value in age.items():
+	print(key)
+	print(values)
+
+output:
+dhanush
+28
+gopal
+29
+naveen
+20
+sanjay
+21
+
+finding a particular key and value presented or not in dict :
+
+age={"dhanush":28,"gopal":29,"naveen":20,"sanjay":21}
+print("gopal" in age.keys())
+print(100 in age.values())
+
+output:
+True
+False
+--------------------------------------------------------------------------
+create a price list for a fruit shop and delete the particular fruit from list:
+
+fruits={"banana":50,"papaya":80,"orange":89,"apple":70,"grapes":60}
+fruits.pop("papaya")
+print(fruits)
+
+------------------------------------------------------------------------
+changing  key as value and value as key in a dict
+
+employees={"srimathi":18,"sindhu":56,"dhanush":15,"vinoth":32}
+new_employees={}
+for name,id in employees.items():
+	new_employees[id]=name
+print(new_employees)
+
+output:
+{18: 'srimathi', 56: 'sindhu', 15: 'dhanush', 32: 'vinoth'}
+
+----------------------------------------------------------------------------
+print the employees name who's get salary above 1500:
+
+employees={"prabhu":1000,"sankar":800,"gopal":1700,"swetha":1600}
+new_employees={}
+for name,salary in employees.items():
+	if salary >=1500:
+		new_employees[name]=salary
+print(new_employees)
+
+output:
+{'gopal': 1700, 'swetha': 1600}
+
+---------------------------------------------------------------------------
+employees={"prabhu":1000,"sankar":800,"gopal":1700,"swetha":1600}
+
+sort the above dictionary by name:
+
+employees={"prabhu":1000,"sankar":800,"gopal":1700,"swetha":1600}
+for key in sorted(employees):
+	print(key,":",employees[key])
+
+output:
+gopal : 1700
+prabhu : 1000
+sankar : 800
+swetha : 1600
+-----------------------------------------------------------------------------
