@@ -1,0 +1,243 @@
+PYTHON REVISION DAY 13:
+
+open a file:
+f=open(filename,mode) 
+
+text file opening modes:
+r  -->read mode use for read a file,it's a default mode.(if file not existed,it's throws fileNotFoundError.
+
+w  -->write mode use for write a file and existing content will be remove.(if file not existed,new file will be created)
+
+a  -->append mode use for write a file with existing content.the existing content will not be remove.(if file not existed,new file will be create)
+
+r+ --> read and write mode read a file and write the file (if file not existed,new file will be create)
+
+w+ --> write and read mode write a file first and then read the file.existing content will be remove.
+
+a+ -->append and read mode write a file first and then read the file.existing content will not be remove.
+
+x  -->exclusive mode create a file only when file not existed.if file already presented it will throw fileExistError.
+
+binary files opening modes:
+rb,wb,ab,xb,r+b,w+b,a+b
+
+file closing:
+
+f.close()  -->every files must be closed after open.close() function use for close a function.
+
+
+f=open("/home/sanjay/sample.txt","r") 
+print("file name is ",f.name) 
+print("file mode is ",f.mode)
+print("file property",f.readable())
+print("file property",f.writable())
+print("file is closed or not",f.closed)
+f.close()
+print("file is closed or not",f.closed)
+
+output:
+file name is  /home/sanjay/sample.txt
+file mode is  w
+file property False
+file property True
+file is closed or not False  #--> before using f.close()
+file is closed or not True   #--> after using f.close()
+
+file opening and writing:
+f=open("/home/sanjay/sample.txt","r")
+f.write("i am\na\ndeveloper")
+f.close()
+
+output in sample.txt file:
+i am
+a
+developer
+
+writing a file using append mode:
+
+f=open("/home/sanjay/sample.txt","r")
+f.write("\nhello developers")
+f.close()
+
+output in sample.txt:
+i am
+a
+developer
+hello developers
+
+writing a list value in file line by line:
+f=open("/home/sanjay/sample.txt","r")
+lst=["\nsanjay","\nnaveen","\nkumar","\nvinoth"]
+f.writelines(lst)
+f.close()
+
+output in  sample.txt:
+sanjay
+naveen
+kumar
+vinoth
+
+reading a file:
+f=open("/home/sanjay/sample.txt","r")
+out=f.read()
+print(out)
+f.close()
+
+output in terminal:
+sanjay
+naveen
+kumar
+vinoth
+
+Reading n characters in file:
+
+f=open("/home/sanjay/sample.txt","r")
+out=f.read(10)
+f.close()
+
+output:
+sanjay
+nav
+
+Reading first line in a file:
+f=open("/home/sanjay/sample.txt","r")
+out=readline()
+print(out)
+f.close()
+
+output:
+sanjay
+
+Reading all the lines from a file and get a list value as output:
+f=open("/home/sanjay/sample.txt","r")
+out=f.readlines()
+print(out)
+
+output:
+['sanjay\n', 'naveen\n', 'kumar\n', 'vinoth']
+
+with statement:
+using of with statement we dont need to close a file manually.with statement automatically close the file after the block ends.
+
+with open("/home/sanjay/sample.txt","r") as f:
+	out=f.read()
+	print(out)
+	
+tell function:
+using of tell function we can know the cursor's current position.
+
+with open("/home/sanjay/sample.txt","r") as f:
+	print(f.tell())
+	out=f.read(6)
+	print(f.tell())
+	print(out)
+	
+output:
+0
+6
+sanjay
+
+seek():
+seek() function moves the cursor to the particular place.
+
+with open("/home/sanjay/sample.txt","r") as f:
+	out=f.read(6)
+	print(out)
+	print(f.tell())
+	f.seek(10)
+	out=f.read(6)
+	print(out)
+	print(f.tell())
+	
+output:
+sanjay
+6
+een
+ku
+16
+
+file present or not:	
+using of isfile from path sub-module of os we can check a file presented or not.
+
+import os
+fname="/home/sanjay/sample.txt"
+if os.path.isfile(fname):
+	print("file is presented")
+	with open(fname,"r") as f:
+		out=f.read()
+		print(out)
+else:
+	print("file not found")
+	
+output:
+file is presented
+sanjay
+naveen
+kumar
+vinoth
+
+read a binary file and then write in another binary file:
+
+f1=open("//home//sanjay//house.png","rb")
+f2=open("//home//sanjay//housee.png","wb")
+data=f1.read()
+f2.write(data)
+f1.close()
+f2.close()
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
