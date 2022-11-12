@@ -1,0 +1,105 @@
+PYTHON REVISION DAY 14:
+
+finding no. of lines,no. of words and no. of characters in file:
+
+import os
+fname=input("enter your file name with location")
+if os.path.isfile(fname):
+	lcount=wcount=ccount=0
+	with open(fname,"r") as f:
+		for line in f:
+			lcount=lcount+1
+			word=line.split()
+			wcount+=len(word)
+			ccount=ccount+len(line)
+	print(lcount)
+	print(wcount)
+	print(ccount-(lcount-1))
+else:
+	print("file not present")
+---------------------------------------------------------------------------
+CSV file writing:
+
+get students report from user and store it in csv file.
+
+import csv
+with open("/home/sanjay/students.csv","w") as f:
+	w=csv.writer(f)
+	w.writerow(["Name","Roll no","Percentage","Department"])
+	while True:
+		name=input("enter name")
+		rollno=int(input("enter the roll no"))
+		percentage=float(input("enter percentage"))
+		department=input("enter the department")
+		w.writerow([name,rollno,percentage,department])
+		option=input("continue? yes|no ")
+		if option.upper()=="NO":
+			break
+-----------------------------------------------------------------------
+csv file reading:
+
+import csv
+with open("/home/sanjay/students.csv","r") as f:
+	r=csv.reader(f)
+	data=list(r)
+	for row in data:
+		print(row)
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+			
+		
+			  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
