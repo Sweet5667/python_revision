@@ -45,61 +45,111 @@ with open("/home/sanjay/students.csv","r") as f:
 	for row in data:
 		print(row)
 -------------------------------------------------------------------------
+factorial program using recursion:
+recursion:function calling a function itself its called recursion.few set of instrucions called by a name
 
+def fact(n):
+	if n==0:
+		return 1
+	else:
+		return n*fact(n-1)
+print(fact(0))
+print(fact(5))
 
+output:
+1
+120
+----------------------------------------------------------------------------
+EXCEPTION HANDLING IN PYTHON:
+difference between error and exception:
 
+error---> syntex mistake called error.when compile time the program convert to byte code.if any mistake found in any line python throws compile time error.
 
+exception---> an unexpected event occured that stops the normal flow of a program is known as exception.
 
+x=5
+y=0
+print(x/y)
 
+output:
+ZeroDivisionError: division by zero 
+----------------------------------------------------------------
+x=5
+y="hello"
+print(x/y)
 
+output:
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+---------------------------------------------------------------
+print(sanjay)
 
+output:
+NameError: name 'sanjay' is not defined
+---------------------------------------------------------------------
+f=open("abc.txt")
+print(f.read())
 
-
-
-
-
-
-
-
-
+output:
+FileNotFoundError: [Errno 2] No such file or directory: 'abc.txt'
+----------------------------------------------------------------------
+try:
+	print(10/0)
+except ZeroDivisionError as msg:   
+	print(type(msg))
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+output:
+<class 'ZeroDivisionError'>
 
-	
+try:
+	print(10/0)
+except ZeroDivisionError:   
+	print(100/5)
 
-			
-		
-			  
+output:
+20.0
 
-
-
-
-
+notes:#try 10/0.incase ZeroDivisionError present execute the except block.
+using of pass keyword in expect block, we can run a program without any codes in expect block.
+error raised in try block.so alternative solution is given by except block.
+----------------------------------------------------------------------------
+try:
+	x=int(input("enter no"))
+	y=int(input("enter no"))
+except (ZeroDivisionError,ValueError) as msg:   
+	print(msg)
 
 
+notes:
+#more than one except given here separated by comma
+-----------------------------------------------------------------------------
+with open("/home/sanjay/sample.txt") as file:
+	for each_line in file:
+		(city,pincode)=each_line.split("-")
+		print("pincode of ",city,end=" ")
+		print("is ",pincode,end="")
 
+output:
+ValueError: not enough values to unpack (expected 2, got 1)
 
+notes:data in sample.txt given below
+hello python-603304
+hello jython 600303        
+hello python-600302
 
+* error occure while reading 2nd line of sample.txt,reason of using split().
+-----------------------------------------------------------------------------
+get a pin number from user.if any ValueError presented alert the user for enter a valid pin number:
 
+def get_number():
+	number=int(input("enter your PIN number"))
+	return number
 
-
-
-
-
-
-
-
-
-
-
-
+while True:
+	try:
+		print(get_number())
+		option=input("continue? yes|no")
+		if option.upper()=="NO":
+			break
+	except ValueError:
+		print("please enter a valid PIN number")
+----------------------------------------------------------------------------
