@@ -1,0 +1,157 @@
+PYTHON REVISION DAY 15
+
+try in another try block::
+
+try:
+	with open("/home/sanjay/sample.txt") as file:
+		for each_line in file:
+			try:
+				(city,pincode)=each_line.split("-")
+				print("pincode of ",city,end=" ")
+				print("is ",pincode,end="")
+			except ValueError:
+				print("please check split")
+			except:
+				pass
+except:
+	print("please check file location")
+
+notes:try block must need except or finally block.we can give more than one except for one try block.
+-------------------------------------------------------------------------------
+finally block will be execute always.finally used in db connection and connection closing.
+
+try:
+	x=int(input("enter no "))  #70
+	y=int(input("enter no "))  #0
+	print(x/y)
+except (ZeroDivisionError,ValueError) as msg:
+	print(msg)
+finally:
+	print("check finally")
+
+output:
+division by zero
+check finally
+-------------------------------------------------------------------------------
+import sys
+inputList=["a",0,2,8,10,False]
+
+for entry in inputList:
+	try:
+		print("the entry is ",entry)
+		r=1/int(entry)
+		break
+	except:
+		print("oops!",sys.exc_info(),"occured.")
+		print("next entry.")
+		print()
+print("the resiprocal of ",entry,"is",r)
+		
+output:
+the entry is  a
+oops! (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: 'a'"), <traceback object at 0x7f13eec6f6c0>) occured.
+next entry.
+
+the entry is  0
+oops! (<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x7f13eec6f740>) occured.
+next entry.
+
+the entry is  2
+the resiprocal of  2 is 0.5
+
+notes:
+sys.exc_info() fuction from sys module use for print which exception occured in the block.sys.exc_info()[2] this method print the except message only in output.
+------------------------------------------------------------------------------
+RELATIONAL DATA BASE MANAGEMENT SYSTEM(RDBMS):
+
+relational --> relation between 2 or more tables.
+data base  ---> rows and columns use for store a data 
+
+Structuerd Query Language (SQL):
+
+Data Definition Language (DDL):
+1.create table
+2.add columns to the table
+3.alter the table
+4.drop table
+
+Data Manipulation Language (DML):
+1.database--insert
+2.edit/update in database
+3.delete in database
+
+some SQL's :oracle,MySQL,SQLite,MS SQLServer,DB2,H2
+
+database creation: Query
+
+CREATE DATABASE college;
+
+table creation query:
+
+CREAT TABLE "Employee"(
+	"EID" INTEGER NOT NULL UNIQUE,
+	"EName" TEXT NOT NULL
+	"Address" TEXT,
+	PRIMARY KEY("EID")
+);
+
+Delete table query:
+
+DROP TABLE Employee;  --->delete entire table
+TRUNCATE TABLE Employee ; ---->delete all data in table
+
+add and delete a column in table:
+
+ALTER TABLE Employee
+ADD Proof TEXT;
+
+ALTER TABLE Employee
+DROP Proof text;
+
+changing data type of column in table:
+ALTER TABLE Employee
+ALTER COLUMN EID TEXT;
+
+value insert query:
+
+INSERT INTO Employee(EID,EName,Address)
+VALUES (123,"singaram","madhurai");
+
+update query:
+
+SET EName="ram",Address="chennai"
+WHERE EID=123;
+
+delete row query:
+
+DELETE FROM Employee WHERE EID=123;
+
+view table data:
+SELECT * FROM Employee
+
+view specific column
+SELECT EName,Address FROM Employee
+WHERE EID=123;
+------------------------------------------------------------------------------
+create a data base in python:
+
+import sqlite3
+
+connection=sqlite3.connect("//home//sanjay//academy.db")
+cursor=connection.cursor()
+sql_command="""
+			CREATE TABLE Student(
+			Rollno INTEGER PRIMARY KEY,
+			Sname VARCHAR(20),
+			Grade CHAR(1),
+			Gender CHAR(1),
+			Average DECIMAL(5,2),
+			Birth_date  DATE);"""
+cursor.execute(sql_command)
+sql_command="""INSERT INTO
+			Student(Rollno,Sname,Grade,Gender,Average,Birth_date)
+			VALUES(null,"gopal","b","M","80.8","2001-12-12");"""
+cursor.execute(sql_command)
+connection.commit()  #save the details in database
+print("Student Table Created")
+------------------------------------------------------------------------------
