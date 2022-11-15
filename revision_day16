@@ -1,0 +1,155 @@
+PYTHON REVISION DAY 16:
+
+Adding list of values in db using python.
+
+import sqlite3
+
+connection=sqlite3.connect("/home/sanjay/academy.db")  #connection establish
+cursor=connection.cursor()                             #cursor conecting
+student_data=[("priya","C","F","75.2","2001/11/26"),
+			  ("srimathi","A","F","80.5","2001/04/20"),
+			  ("vinoth","C","M","70.7","2001/02/14"),
+			  ("dhanush","A","M","80.6","2001/10/22")]
+			  
+for i in student_data:
+	holder="""INSERT INTO student(Sname,grade,gender,average,birth_date)
+			VALUES("{Sname}","{grade}","{gender}","{average}",
+			"{birth_date}");"""
+	sql_command=holder.format(Sname=i[0],grade=i[1],gender=i[2],average=i[3],birth_date=i[4])
+	
+	cursor.execute(sql_command)
+
+connection.commit()   #save the details
+connection.close()    #close the connection
+print("Records Added")
+
+output in academy.db:
+
+1	gopal   	b	M	80.8	2001-12-12
+2	priya   	C	F	75.2	2001/11/26
+3	srimathi	A	F	80.5	2001/04/20
+4	vinoth	    C	M	70.7	2001/02/14
+5	dhanush	    A	M	80.6	2001/10/22
+
+----------------------------------------------------------------------
+printing all values from db.
+
+import sqlite3
+
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT * FROM student")
+ans=cursor.fetchall()
+for i in ans:
+	print(i)
+connection.close()
+
+output:
+(1, 'gopal', 'b', 'M', 80.8, '2001-12-12')
+(2, 'priya', 'C', 'F', 75.2, '2001/11/26')
+(3, 'srimathi', 'A', 'F', 80.5, '2001/04/20')
+(4, 'vinoth', 'C', 'M', 70.7, '2001/02/14')
+(5, 'dhanush', 'A', 'M', 80.6, '2001/10/22')
+-------------------------------------------------------------------
+printing one row value from db using fetchone()
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT * FROM student")
+ans=cursor.fetchone()
+print(ans)
+connection.close()
+
+output:
+(1, 'gopal', 'b', 'M', 80.8, '2001-12-12')
+-----------------------------------------------------------------------
+printing all values from db using fetchone() with while:
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT * FROM student")
+ans=cursor.fetchone()
+while ans is not None:
+	print(ans)
+	ans=cursor.fetchone()
+connection.close()
+
+output:
+(1, 'gopal', 'b', 'M', 80.8, '2001-12-12')
+(2, 'priya', 'C', 'F', 75.2, '2001/11/26')
+(3, 'srimathi', 'A', 'F', 80.5, '2001/04/20')
+(4, 'vinoth', 'C', 'M', 70.7, '2001/02/14')
+(5, 'dhanush', 'A', 'M', 80.6, '2001/10/22')
+----------------------------------------------------------------------------
+printing first 2 rows from db using fetchmany()
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT * FROM student")
+ans=cursor.fetchmany(2)
+print(ans)
+connection.close()
+
+output:
+[(1, 'gopal', 'b', 'M', 80.8, '2001-12-12'), (2, 'priya', 'C', 'F', 75.2, '2001/11/26')]
+
+notes(fetchmany() return data type is list.
+-------------------------------------------------------------------------------
+printing one coloumn value from db:
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT DISTINCT(gender) FROM student")
+ans=cursor.fetchall()
+print(ans)
+connection.close()
+
+output:
+[('M',), ('F',)]
+
+notes:duplicate values removes automatically while using DISTINCT.
+---------------------------------------------------------------------------
+printing how many rows present in db:
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("SELECT count(*) FROM student")
+ans=cursor.fetchall()
+print(ans)
+
+output:
+[(5,)]
+------------------------------------------------------------------
+delete a row in db and finding how many rows delete from db:
+
+import sqlite3
+connection=sqlite3.connect("/home/sanjay/academy.db")
+cursor=connection.cursor()
+cursor.execute("DELETE FROM student WHERE Rollno='1'")
+connection.commit()
+print("total no of rows deleted",connection.total_changes)
+connection.close()
+
+output:
+total no of rows deleted 1
+-----------------------------------------------------------------------------
+oop's in python:
+
+object:
+object is instance of a class.
+object must have minimum one state and minimum one behaviour.
+attributes:attributes represent the state
+method:method represent the behaviour of object
+without class cannot create a object.but without object the class can be create.
+without class cannot create a object.but without object the class can be create.
+
+class:
+class is a blueprint or template of a object.
+class store's objects data within it.
+class is a named memory space.
+in python we can create a class by using class keyword.
