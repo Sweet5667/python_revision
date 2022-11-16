@@ -1,0 +1,96 @@
+class supermarket:   #class creation
+	discount=0.4    #class variable
+	
+product1=supermarket()  #object creation
+product2=supermarket()
+
+product1.name="shampoo"  #instance variable
+product1.price=10
+
+product2.name="soap"
+product2.price=20
+
+print(product1.name)
+print(product2.name)
+
+print(product1)
+print(product2)
+
+output:
+soap
+shampoo
+<__main__.supermarket object at 0x7f4cb5612f20>
+<__main__.supermarket object at 0x7f4cb5612ef0>
+------------------------------------------------------------------------------
+constructor creating:
+constructor useful for initialise object specific values
+constructor will be called automatically whenever object is created.
+
+class supermarket:
+	def __init__(self,name,price,discount): #constructor
+		self.name=name
+		self.price=price
+		self.discount=discount 
+	
+product1=supermarket("soap",10,0.4)
+product2=supermarket("shampoo",20,0.5)
+
+print(product1.name)
+print(product2.name)
+
+output:
+soap
+shampoo
+---------------------------------------------------------------------------
+define a method and print all the values of object:
+
+class supermarket:
+	def __init__(self,name,price,discount):
+		self.name=name
+		self.price=price
+		self.discount=discount
+	
+	def product_details(self): #method definition
+		return "name:{} price:{} discount:{}".format(self.name,self.price,self.discount)
+
+product1=supermarket("soap",10,0.5)
+product2=supermarket("shampoo",20,0.4)
+
+print(product1.product_details())   #method calling  #instance method
+print(product2.product_details())
+print(supermarket.product_details(product1))
+
+output:
+name:soap price:10 discount:0.5
+name:shampoo price:20 discount:0.4
+name:soap price:10 discount:0.5
+--------------------------------------------------------------------------------
+simple address book using oops concept:
+
+class AddressBook:
+	
+	def __init__(self):
+		self.name=""
+		self.email=""
+	
+	def GiveContactDetails(self):
+		self.name=input("enter contact name")
+		self.email=input("enter email id")
+	
+	def DisplayContact(self):
+		print("contact name :",self.name,"\nEmail id:",self.email)
+ContactList=[]
+contact=AddressBook()
+response="y"
+while response!="n":
+	print("1.Add Contact\n2.Display contact")
+	choice=int(input("enter your choice"))
+	
+	if choice==1:
+		contact.GiveContactDetails()
+		ContactList.append(contact)
+	elif choice==2:
+		for i in ContactList:
+			  i.DisplayContact()
+	response=input("press y for another contact!")
+-----------------------------------------------------------------------------
