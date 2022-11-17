@@ -94,3 +94,39 @@ while response!="n":
 			  i.DisplayContact()
 	response=input("press y for another contact!")
 -----------------------------------------------------------------------------
+create a address book by using sqlite3 and python:
+
+import sqlite3
+
+class Address:
+	
+	def __init__(self):
+		self.name=""
+		self.number=""
+
+	def AddContact(self):
+		self.name=input("enter contact name")
+		self.number=int(input("enter your number"))
+		return self.name,self.number
+
+again="y"
+while again=="y":
+	response=int(input("1.add contact\n2.displaycontact"))
+	if response==1:
+		contact=Address()
+		(Name,Mobile no)=contact.AddContact()
+		with sqlite3.connect("/home/sanjay/address") as connection:
+			cursor=connection.cursor()
+			cursor.execute("""INSERT INTO address("Name","Mobile no")
+					   VALUES(?,?)""",(name,number))
+	elif response==2:
+		connection=sqlite3("/home/sanjay/address.db")
+		cursor=connection.cursor()
+		cursor.execute("SELECT Name FROM address")
+		result=cur.fetchall()
+		print(result,sep="\n")
+	else:
+		print("please enter valid choice")
+	again=input("for add another press y")
+connection.commit()
+connection.close()
